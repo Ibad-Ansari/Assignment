@@ -1,0 +1,93 @@
+<script>
+
+    // const ticket = new Promise(function(resolve,reject){
+    //      const isboarded = false;
+    //      if(isboarded){
+    //         resolve("You are not in the flight");
+    //      } else {
+    //         reject("Your flight has been cancelled");
+    //      }
+    // });
+
+    // ticket
+    // .then((data)=>{
+    //     console.log("whooo",data)
+    // })
+    // .catch((data)=>{
+    //     console.log("ooh nooo",data)
+    // })
+    // .finally(()=>{
+    //     console.log("I will Always be execute");
+    // });
+
+
+
+      function getname() {
+        return new Promise ((resolve , reject) => {
+            setTimeout( () => {
+      const name = "Ahmad";
+  
+      resolve(name);
+    }, 2000);
+}); 
+
+}     function getcity(name) {
+        return new Promise ((resolve , reject) => {
+            setTimeout( () => {
+      const city = "Karachi";
+     resolve(city);
+    //  reject("wrong city");
+    }, 2000);
+}); 
+
+}
+function getage(city) {
+        return new Promise ((resolve , reject) => {
+            setTimeout( () => {
+      const Age = 22;
+      resolve(Age);
+    }, 2000);
+}); 
+
+}
+
+async function biodata(){
+    try{
+    const name = await getname();
+    console.log("here is my name", name);
+
+    const city = await getcity();
+    console.log("here is my city", city);
+
+    const Age = await getage();
+    console.log("here is my Age", Age);
+} catch(err) {
+    console.log("error occured", err);
+}
+}
+biodata();
+
+
+
+// getname()
+// .then((name)=>{
+//     console.log("here is my name", name);
+//     return getcity(name);
+// })
+// .then((city)=>{
+//     console.log("here is my city", city);
+//     return getage(city);
+// })
+// .then((Age)=>{
+//     console.log("here is my Age", Age);
+// })
+// .catch((data) => {
+// console.log("error occured",data);
+// })
+// .finally(()=>{
+//     console.log("process ended");
+// });
+
+
+
+</script>

@@ -1,0 +1,42 @@
+<script>
+  // console.log("Hello World");
+  // setTimeout(function() {
+  //   console.log("This Will execute later");
+  // }, 2000);
+
+  function getname(callback) {
+    setTimeout( () => {
+      const name = "Ahmad";
+      console.log("here is my name", name);
+      callback(name);
+    }, 2000);
+  }
+  function getcity(name , callback) {
+    setTimeout ( () => {
+      const city ="Karachi";
+      console.log("here is my city ",city);
+      callback(city);
+    },2000);
+  }
+
+  function getage(city, callback) {
+    setTimeout ( () => {
+      const Age = 22;
+      console.log("here is my Age ",Age);
+      callback(Age);
+    },2000);
+  }
+
+getname((name) => {
+  getcity(name,(city) => {
+    getage(city,(Age) => {
+    console.log("Got My Name" , name + "\nGot my city",city + "\nGot My Age " , Age);
+    });
+  });
+});
+
+
+
+
+
+</script>
